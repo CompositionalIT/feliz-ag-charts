@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <Version>0.0.1</Version>
+    <Authors>Compositional IT</Authors>
+    <PackageProjectUrl>https://github.com/CompositionalIT/feliz-ag-charts</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CompositionalIT/feliz-ag-charts</RepositoryUrl>
+    <PackageIcon>CIT-Circle.png</PackageIcon>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup>
+      <NpmDependencies>
+          <NpmPackage Name="ag-charts-community" Version="gte 3.0.0 lt 4.0.0" ResolutionStrategy="Max" />
+          <NpmPackage Name="ag-charts-react" Version="gte 3.0.0 lt 4.0.0" ResolutionStrategy="Max" />
+      </NpmDependencies>
+  </PropertyGroup>
+  <ItemGroup>
+      <Content Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CIT-Circle.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="paket.references" />
+    <Compile Include="Feliz.AgChart.fs" />
+  </ItemGroup>
+  <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>
